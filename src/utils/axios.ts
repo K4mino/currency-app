@@ -1,9 +1,7 @@
 import axios from "axios";
 
-export const BASE_URL = 'https://nationalbank.kz';
-
 const axiosInstance = axios.create({
-    baseURL: '/api',
+    baseURL: import.meta.env.VITE_API_BASE_URL,
     headers:{
         "Access-Control-Allow-Origin": "*"
     }
