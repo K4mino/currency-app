@@ -1,39 +1,20 @@
-# currency-app
+## Эндпоинт
+GET /api/rss/get_rates.cfm
+Параметры:
+fdate: Дата в формате DD.MM.YYYY для получения курсов на эту дату.
+Ответ: XML-документ с данными о курсах валют.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Функционал
 
-## Recommended IDE Setup
+### Отображение списка курсов валют:
+Загружает данные с API для даты по умолчанию (например, 30.03.2023) при загрузке страницы.
+Отображает карточки валют, включая основную информацию и флаг страны.
+Пользователь может добавлять или удалять валюты в избранное.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Изменение даты курса валют:
+Пользователь может изменить дату для получения курсов валют на другую.
+При изменении даты происходит запрос к API для загрузки курсов на выбранную дату.
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### Избранные валюты:
+Пользователь может помечать валюты как избранные.
+Избранные валюты сохраняются в локальное хранилище браузера и сохраняются между сессиями.
