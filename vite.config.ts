@@ -16,12 +16,10 @@ export default defineConfig({
     }
   },
   server: {
-    port: 3000,
     proxy: {
       '/api': {
         target: 'https://nationalbank.kz',
         changeOrigin: true,
-        secure: false,
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
