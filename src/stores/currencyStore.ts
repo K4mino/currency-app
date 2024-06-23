@@ -28,7 +28,7 @@ export const useCurrencyStore = defineStore('currency', () => {
  
   async function fetchData() {
     try {
-      const res = await fetch(`${BASE_URL}/rss/get_rates.cfm?fdate=${rateDate.value}`);
+      const res = await fetch(`api/rss/get_rates.cfm?fdate=${rateDate.value}`);
       const xmlText = await res.text()
       const parsedItems = parseItemsXML(xmlText)
 
