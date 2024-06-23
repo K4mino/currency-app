@@ -29,7 +29,7 @@ export const useCurrencyStore = defineStore('currency', () => {
  
   async function fetchData() {
     try {
-      const res = await axiosInstance.get(`/api/rss/get_rates.cfm`, {
+      const res = await axiosInstance.get(`/api/getRates`, {
         params: { fdate: rateDate.value },
       });
       const xmlText = await res.data
