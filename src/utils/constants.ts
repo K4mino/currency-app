@@ -6,3 +6,5 @@ export const flags: { [key: string]: string } = {
     BYN: '/flags/bel.gif',
     
   };
+
+export const BASE_URL = 'https://nationalbank.kz';

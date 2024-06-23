@@ -18,7 +18,7 @@ const { favoriteItems } = storeToRefs(currencyStore);
       :key="item.title" 
       :item="item" 
       v-if="favoriteItems.length"/>
-    <div v-else>There is no data</div>
+    <h2 v-else>There is no data</h2>
 </div>
 </template>
 
