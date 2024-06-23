@@ -7,4 +7,3 @@ export const flags: { [key: string]: string } = {
     
   };
 
-export const BASE_URL = 'https://nationalbank.kz';

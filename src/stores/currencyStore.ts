@@ -2,7 +2,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { parseItemsXML } from '@/utils/xmlParser'
 import  formatDate from '@/utils/formatDate'
-import { flags, BASE_URL } from '@/utils/constants'
+import { flags } from '@/utils/constants'
+import axiosInstance from '@/utils/axios'
 
 export interface Item {
   title: string;
@@ -28,8 +29,10 @@ export const useCurrencyStore = defineStore('currency', () => {
  
   async function fetchData() {
     try {
-      const res = await fetch(`api/rss/get_rates.cfm?fdate=${rateDate.value}`);
-      const xmlText = await res.text()
+      const res = await axiosInstance.get(`/rss/get_rates.cfm`, {
+        params: { fdate: rateDate.value },
+      });
+      const xmlText = await res.data
       const parsedItems = parseItemsXML(xmlText)
 
       parsedItems.forEach(item => {
