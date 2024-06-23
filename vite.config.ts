@@ -21,6 +21,12 @@ export default defineConfig({
       '/api': {
         target: 'https://nationalbank.kz',
         changeOrigin: true,
+        secure: false,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With'
+        },
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
