@@ -29,6 +29,7 @@ export const useCurrencyStore = defineStore('currency', () => {
   async function fetchData() {
     try {
       const res = await fetch(`/api/rss/get_rates.cfm?fdate=${rateDate.value}`);
+      //const res = await fetch(`https://nationalbank.kz/rss/get_rates.cfm?fdate=30.04.2023`)
       const xmlText = await res.text();
       const parsedItems = parseItemsXML(xmlText)
 
